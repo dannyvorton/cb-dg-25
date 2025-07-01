@@ -1,5 +1,5 @@
 FROM node:alpine
-WORKDIR /Users/dan.orton/GitHub/cb-dg-25
+WORKDIR /Users/dan.orton/GitHub/cb-dg-25/browser
 COPY package*.json ./
 RUN npm install
 COPY .                                                                                                                                                                                  .
