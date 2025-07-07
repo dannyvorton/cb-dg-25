@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  angular-frontend:
+    build: ./browser
+    ports:
+      - "80:80"
+    depends_on:
+      - go-backend
+  
+  go-backend:
+    build: ./server
+    ports:
+      - "8080:8080"
