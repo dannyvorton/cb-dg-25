@@ -1,7 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"github.com/pocketbase/pocketbase"
+	"github.com/pocketbase/pocketbase/core"
+)
 
 func main() {
-	fmt.Println("Hello, World!")
+	app := pocketbase.New()
+	app.OnServe().BindFunc(func(se *core.ServeEvent) error {
+		se.Router.GET("/hello", func(re *core.RequestEvent) error {
+			return re.String(200, "Hello world!")
+		})
+		return se.Next()
+	})
+	if err := app.Start(); err != nil {
+		log.Fatal(err)
+	}
 }
