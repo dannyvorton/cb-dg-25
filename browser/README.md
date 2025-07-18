@@ -31,3 +31,9 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## docker image
+docker build --tag cb-dg-25-browser .
+
+## docker container
+docker run -it -p 8080:8080 --rm --name cb-dg-25-front cb-dg-25-browser
