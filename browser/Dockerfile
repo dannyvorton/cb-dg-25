@@ -1,4 +1,4 @@
-FROM node:lts-alpin
+FROM node:lts-alpine
 RUN npm install -g http-server
 WORKDIR /browser
 COPY package*.json ./
