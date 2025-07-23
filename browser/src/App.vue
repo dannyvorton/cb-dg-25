@@ -3,6 +3,7 @@
 </script>
 
 <template>
+  <List />
 </template>
 
 <style scoped>
